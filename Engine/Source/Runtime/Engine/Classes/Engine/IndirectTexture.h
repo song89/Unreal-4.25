@@ -10,7 +10,7 @@
  * 
  */
 UCLASS(BlueprintType)
-class TEST_API UIndirectTexture : public UObject
+class UIndirectTexture : public UObject
 {
 	GENERATED_BODY()
 

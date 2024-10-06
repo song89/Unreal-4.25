@@ -11,7 +11,7 @@
  * 
  */
 UCLASS()
-class TEST_API UMaterialExpressionIndirectTextureObject : public UMaterialExpression
+class UMaterialExpressionIndirectTextureObject : public UMaterialExpression
 {
 	GENERATED_BODY()
 

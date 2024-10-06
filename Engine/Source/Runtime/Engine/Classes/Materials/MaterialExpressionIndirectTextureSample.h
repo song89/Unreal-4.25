@@ -10,7 +10,7 @@
  * 
  */
 UCLASS()
-class TEST_API UMaterialExpressionIndirectTextureSample : public UMaterialExpression
+class UMaterialExpressionIndirectTextureSample : public UMaterialExpression
 {
 	GENERATED_BODY()
 	
