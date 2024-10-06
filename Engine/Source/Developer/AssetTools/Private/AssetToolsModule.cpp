@@ -6,6 +6,7 @@
 #include "AssetToolsConsoleCommands.h"
 #include "MessageLogInitializationOptions.h"
 #include "MessageLogModule.h"
+#include "AssetTypeActions/IndirectTextureActions.h"
 
 IMPLEMENT_MODULE( FAssetToolsModule, AssetTools );
 DEFINE_LOG_CATEGORY(LogAssetTools);
@@ -21,6 +22,9 @@ void FAssetToolsModule::StartupModule()
 	FMessageLogInitializationOptions InitOptions;
 	InitOptions.bShowPages = true;
 	MessageLogModule.RegisterLogListing("AssetTools", NSLOCTEXT("AssetTools", "AssetToolsLogLabel", "Asset Tools"), InitOptions);
+
+	IAssetTools& AssetTools = FModuleManager::LoadModuleChecked<FAssetToolsModule>("AssetTools").Get();
+	AssetTools.RegisterAssetTypeActions(MakeShareable(new FIndirectTextureAssetTypeActions()));
 }
 
 void FAssetToolsModule::ShutdownModule()
